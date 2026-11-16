@@ -15,7 +15,7 @@ def test_version():
 
 
 def test_demo_writes_metrics(tmp_path):
-    r = runner.invoke(app, ["demo", "--steps", "3", "--delay", "0", "--logs", str(tmp_path)])
+    r = runner.invoke(app, ["demo", "--set", "steps=3", "--set", "delay=0", "--logs", str(tmp_path)])
     assert r.exit_code == 0, r.output
     lines = next(tmp_path.glob("*/metrics.jsonl")).read_text().splitlines()
     assert [json.loads(x)["step"] for x in lines] == [0, 1, 2]

@@ -1,0 +1,3 @@
+# Settings for `project-template demo`. Override one with --set, e.g. --set steps=50.
+steps = 200
+delay = 0.05  # seconds between steps
