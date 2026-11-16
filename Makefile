@@ -9,7 +9,7 @@ PKG   = $(subst -,_,$(NAME))
 DOCS := uvx --with mkdocs-material mkdocs
 
 .DEFAULT_GOAL := help
-.PHONY: help sync test lint fmt demo docs docs-build rename
+.PHONY: help sync test lint fmt hooks demo docs docs-build rename
 
 help:  ## show this help
 	@awk 'BEGIN{FS=":.*## "} /^[a-zA-Z_%-]+:.*## /{printf "  \033[36m%-16s\033[0m %s\n",$$1,$$2}' $(MAKEFILE_LIST)
@@ -27,6 +27,9 @@ lint:  ## check style and common bugs
 fmt:  ## auto-format and auto-fix
 	uv run ruff format .
 	uv run ruff check --fix .
+
+hooks:  ## run `make lint` before every git commit
+	hook=$$(git rev-parse --git-path hooks)/pre-commit && printf '#!/bin/sh\nexec make lint\n' > $$hook && chmod +x $$hook
 
 demo:  ## write a fake run to logs/ (feeds the dashboard)
 	uv run project-template demo

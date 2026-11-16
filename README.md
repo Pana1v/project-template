@@ -20,6 +20,7 @@ plus the optional parts listed under Layout. One `Makefile` drives it all.
 ```bash
 make                 # list every target
 make sync test       # install and test
+make hooks           # lint before every commit
 uv run project-template --help
 make docs            # docs on http://localhost:8000
 ```
