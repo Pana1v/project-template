@@ -3,6 +3,7 @@ name = "project-template"
 version = "0.1.0"
 description = "Starting point for a new project: CLI, docs, agent docs, optional dashboard and Docker"
 readme = "README.md"
+license = "MIT"
 requires-python = ">=3.12"
 dependencies = ["typer>=0.12"]
 
