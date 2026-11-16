@@ -1,0 +1,23 @@
+# Monthly, one grouped PR per ecosystem, to keep the noise low.
+version: 2
+updates:
+  - package-ecosystem: uv
+    directory: /
+    schedule: {interval: monthly}
+    groups: {all: {patterns: ["*"]}}
+  - package-ecosystem: github-actions
+    directory: /
+    schedule: {interval: monthly}
+    groups: {all: {patterns: ["*"]}}
+# >>> dashboard
+  - package-ecosystem: npm
+    directory: /dashboard/frontend
+    schedule: {interval: monthly}
+    groups: {all: {patterns: ["*"]}}
+# <<< dashboard
+# >>> docker
+  - package-ecosystem: docker
+    directory: /docker
+    schedule: {interval: monthly}
+    groups: {all: {patterns: ["*"]}}
+# <<< docker
