@@ -3,6 +3,7 @@
 | Path | Job |
 |---|---|
 | `src/project_template/cli.py` | Typer CLI, one function per command |
+| `src/project_template/config.py` | TOML configs from `configs/`: `base` inheritance, `--set` overrides |
 | `tests/` | pytest; `test_<module>.py` per module |
 | `dashboard/backend/app.py` | FastAPI: `/api/runs`, `/ws/<run>`, serves `frontend/dist` |
 | `dashboard/frontend/src/` | React + uPlot, one chart per metric |

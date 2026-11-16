@@ -45,6 +45,7 @@ make docker-build up # run it in containers
 | Path | What |
 |---|---|
 | `src/project_template/` | the package; `cli.py` is the entry point |
+| `configs/` | TOML settings per job, see `docs/cli.md` |
 | `tests/` | pytest |
 | `docs/`, `mkdocs.yml` | docs site for humans |
 | `CLAUDE.md` (= `AGENTS.md`), `agent_docs/` | context for coding agents |
